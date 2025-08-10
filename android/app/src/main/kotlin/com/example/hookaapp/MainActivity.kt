@@ -1,4 +1,4 @@
-package com.example.Coallider
+package com.coallider.app
 
 import io.flutter.embedding.android.FlutterActivity
 
