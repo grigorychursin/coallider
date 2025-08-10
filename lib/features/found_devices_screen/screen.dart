@@ -1,0 +1,91 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hookaapp/core/constants/hooka_texts.dart';
+import 'package:hookaapp/core/extensions/build_context_extension.dart';
+import 'package:hookaapp/core/extensions/widget_extension.dart';
+import 'package:hookaapp/features/components/hooka_appbar.dart';
+import 'package:hookaapp/features/components/hooka_bottom_bar.dart';
+import 'package:hookaapp/features/components/hooka_button.dart';
+import 'package:hookaapp/features/components/progress_widget.dart';
+import 'package:hookaapp/features/found_devices_screen/components/found_device_item.dart';
+import 'package:hookaapp/features/found_devices_screen/cubit.dart';
+import 'package:hookaapp/features/found_devices_screen/state.dart';
+import 'package:hookaapp/features/hooka_ble/hooka_ble_cubit.dart';
+import 'package:hookaapp/features/hooka_ble/hooka_ble_state.dart';
+
+class FoundDevicesScreen extends StatefulWidget {
+  const FoundDevicesScreen({super.key});
+
+  @override
+  State<FoundDevicesScreen> createState() => _FoundDevicesScreenState();
+}
+
+class _FoundDevicesScreenState extends State<FoundDevicesScreen> {
+  late final FoundDevicesCubit _cubit;
+  @override
+  void initState() {
+    _cubit = FoundDevicesCubit(
+      bleCubit: context.read(),
+      navigator: context.navigator,
+    );
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final bleCubit = context.read<HookaBleCubit>();
+    return ProgressWidget<FoundDevicesCubit, FoundDevicesState>(
+      bloc: _cubit,
+      child: BlocListener<HookaBleCubit, HookaBleState>(
+        listener: (_, __) {
+          _cubit.onDevicesListChanged();
+        },
+        child: BlocProvider.value(
+          value: _cubit,
+          child: BlocBuilder<FoundDevicesCubit, FoundDevicesState>(
+            bloc: _cubit,
+            builder: (context, state) {
+              return Scaffold(
+                appBar: hookaAppBar(
+                  context: context,
+                  applyLeading: true,
+                  applyTitle: false,
+                ),
+                body: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      HookaTexts.foundDevices,
+                      style: context.textTheme.titleMedium,
+                    ),
+                    Expanded(
+                      child: ListView.builder(
+                        padding: EdgeInsets.symmetric(vertical: 16.0),
+                        itemCount: state.devices.length,
+                        itemBuilder:
+                            (context, i) => FoundDeviceItem(
+                              device: state.devices[i],
+                              isSelected:
+                                  state.devices[i].id ==
+                                  bleCubit.state.selectedDevice?.id,
+                            ).paddingOnly(bottom: 8.0),
+                      ),
+                    ),
+
+                    HookaButton(
+                      onTap: _cubit.onRetry,
+                      text: HookaTexts.tryAgain,
+                      isActive: true,
+                    ).paddingOnly(top: 16.0, bottom: 20.0),
+                    const HookaBottomBar(topMargin: 20.0),
+                    SizedBox(height: 16.0),
+                  ],
+                ).paddingSymmetric(h: 16.0),
+              );
+            },
+          ),
+        ),
+      ),
+    );
+  }
+}
