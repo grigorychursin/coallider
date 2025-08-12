@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hookaapp/core/constants/hooka_texts.dart';
-import 'package:hookaapp/core/extensions/build_context_extension.dart';
-import 'package:hookaapp/core/extensions/widget_extension.dart';
-import 'package:hookaapp/features/components/hooka_appbar.dart';
-import 'package:hookaapp/features/components/hooka_bottom_bar.dart';
-import 'package:hookaapp/features/components/hooka_button.dart';
-import 'package:hookaapp/features/components/progress_widget.dart';
-import 'package:hookaapp/features/found_devices_screen/components/found_device_item.dart';
-import 'package:hookaapp/features/found_devices_screen/cubit.dart';
-import 'package:hookaapp/features/found_devices_screen/state.dart';
-import 'package:hookaapp/features/hooka_ble/hooka_ble_cubit.dart';
-import 'package:hookaapp/features/hooka_ble/hooka_ble_state.dart';
+import 'package:coallider/core/constants/hooka_texts.dart';
+import 'package:coallider/core/extensions/build_context_extension.dart';
+import 'package:coallider/core/extensions/widget_extension.dart';
+import 'package:coallider/features/components/hooka_appbar.dart';
+import 'package:coallider/features/components/hooka_bottom_bar.dart';
+import 'package:coallider/features/components/hooka_button.dart';
+import 'package:coallider/features/components/progress_widget.dart';
+import 'package:coallider/features/found_devices_screen/components/found_device_item.dart';
+import 'package:coallider/features/found_devices_screen/cubit.dart';
+import 'package:coallider/features/found_devices_screen/state.dart';
+import 'package:coallider/features/hooka_ble/hooka_ble_cubit.dart';
+import 'package:coallider/features/hooka_ble/hooka_ble_state.dart';
 
 class FoundDevicesScreen extends StatefulWidget {
   const FoundDevicesScreen({super.key});

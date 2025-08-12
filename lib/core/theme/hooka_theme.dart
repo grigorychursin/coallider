@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hookaapp/core/constants/hooka_colors.dart';
+import 'package:coallider/core/constants/hooka_colors.dart';
 
 final class HookaTheme {
   static const _fontFamily = 'SFProDisplay';

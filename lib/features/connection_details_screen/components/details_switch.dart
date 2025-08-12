@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:hookaapp/core/constants/hooka_colors.dart';
-import 'package:hookaapp/core/constants/hooka_texts.dart';
-import 'package:hookaapp/core/extensions/build_context_extension.dart';
-import 'package:hookaapp/core/extensions/widget_extension.dart';
-import 'package:hookaapp/features/components/hooka_tap_animation_handler.dart';
-import 'package:hookaapp/features/connection_details_screen/cubit.dart';
+import 'package:coallider/core/constants/hooka_colors.dart';
+import 'package:coallider/core/constants/hooka_texts.dart';
+import 'package:coallider/core/extensions/build_context_extension.dart';
+import 'package:coallider/core/extensions/widget_extension.dart';
+import 'package:coallider/features/components/hooka_tap_animation_handler.dart';
+import 'package:coallider/features/connection_details_screen/cubit.dart';
 
 class DetailsSwitch extends StatelessWidget {
   final bool isEasy;

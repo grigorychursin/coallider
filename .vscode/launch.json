@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "hookaapp",
+            "name": "coallider",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "hookaapp (profile mode)",
+            "name": "coallider (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "hookaapp (release mode)",
+            "name": "coallider (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

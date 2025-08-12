@@ -1,6 +1,6 @@
-import 'package:hookaapp/data/enums/bottom_state.dart';
-import 'package:hookaapp/data/enums/device_state.dart';
-import 'package:hookaapp/data/enums/spiral_state.dart';
+import 'package:coallider/data/enums/bottom_state.dart';
+import 'package:coallider/data/enums/device_state.dart';
+import 'package:coallider/data/enums/spiral_state.dart';
 
 class BleDeviceInfo {
   final DeviceState deviceState;

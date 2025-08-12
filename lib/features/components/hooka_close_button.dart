@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hookaapp/core/services/navigation/hooka_navigator.dart';
-import 'package:hookaapp/features/components/hooka_tap_animation_handler.dart';
+import 'package:coallider/core/services/navigation/hooka_navigator.dart';
+import 'package:coallider/features/components/hooka_tap_animation_handler.dart';
 
 class HookaCloseButton extends StatelessWidget {
   const HookaCloseButton({super.key});

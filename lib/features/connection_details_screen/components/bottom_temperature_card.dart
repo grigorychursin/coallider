@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hookaapp/core/constants/hooka_colors.dart';
-import 'package:hookaapp/core/constants/hooka_texts.dart';
-import 'package:hookaapp/core/extensions/build_context_extension.dart';
-import 'package:hookaapp/core/extensions/int_ext.dart';
-import 'package:hookaapp/core/extensions/widget_extension.dart';
-import 'package:hookaapp/data/enums/bottom_state.dart';
-import 'package:hookaapp/features/components/hooka_value_displayer.dart';
-import 'package:hookaapp/features/connection_details_screen/cubit.dart';
+import 'package:coallider/core/constants/hooka_colors.dart';
+import 'package:coallider/core/constants/hooka_texts.dart';
+import 'package:coallider/core/extensions/build_context_extension.dart';
+import 'package:coallider/core/extensions/int_ext.dart';
+import 'package:coallider/core/extensions/widget_extension.dart';
+import 'package:coallider/data/enums/bottom_state.dart';
+import 'package:coallider/features/components/hooka_value_displayer.dart';
+import 'package:coallider/features/connection_details_screen/cubit.dart';
 
 class BottomTemperatureCard extends StatelessWidget {
   const BottomTemperatureCard({super.key});

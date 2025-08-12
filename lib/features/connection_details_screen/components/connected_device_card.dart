@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:hookaapp/core/constants/hooka_colors.dart';
-import 'package:hookaapp/core/constants/hooka_images.dart';
-import 'package:hookaapp/core/constants/hooka_texts.dart';
-import 'package:hookaapp/core/extensions/build_context_extension.dart';
-import 'package:hookaapp/core/extensions/widget_extension.dart';
-import 'package:hookaapp/features/components/hooka_tap_animation_handler.dart';
+import 'package:coallider/core/constants/hooka_colors.dart';
+import 'package:coallider/core/constants/hooka_images.dart';
+import 'package:coallider/core/constants/hooka_texts.dart';
+import 'package:coallider/core/extensions/build_context_extension.dart';
+import 'package:coallider/core/extensions/widget_extension.dart';
+import 'package:coallider/features/components/hooka_tap_animation_handler.dart';
 
 class ConnectedDeviceCard extends StatelessWidget {
   final String deviceName;

@@ -1,8 +1,8 @@
 import 'package:di/di.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:hookaapp/core/app/hooka_app.dart';
-import 'package:hookaapp/core/extensions/dicontainer_ext.dart';
+import 'package:coallider/core/app/hooka_app.dart';
+import 'package:coallider/core/extensions/dicontainer_ext.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 
 void runHookaApp() async {

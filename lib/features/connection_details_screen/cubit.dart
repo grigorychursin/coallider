@@ -1,15 +1,15 @@
 import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hookaapp/core/services/logger/logger_service.dart';
-import 'package:hookaapp/core/services/navigation/hooka_navigator.dart';
-import 'package:hookaapp/data/ble_device_info.dart';
-import 'package:hookaapp/data/enums/bottom_state.dart';
-import 'package:hookaapp/data/enums/device_state.dart';
-import 'package:hookaapp/data/enums/spiral_state.dart';
-import 'package:hookaapp/data/min_max_values.dart';
-import 'package:hookaapp/features/connection_details_screen/state.dart';
-import 'package:hookaapp/features/hooka_ble/hooka_ble_cubit.dart';
-import 'package:hookaapp/features/hooka_ble/hooka_ble_state.dart';
+import 'package:coallider/core/services/logger/logger_service.dart';
+import 'package:coallider/core/services/navigation/hooka_navigator.dart';
+import 'package:coallider/data/ble_device_info.dart';
+import 'package:coallider/data/enums/bottom_state.dart';
+import 'package:coallider/data/enums/device_state.dart';
+import 'package:coallider/data/enums/spiral_state.dart';
+import 'package:coallider/data/min_max_values.dart';
+import 'package:coallider/features/connection_details_screen/state.dart';
+import 'package:coallider/features/hooka_ble/hooka_ble_cubit.dart';
+import 'package:coallider/features/hooka_ble/hooka_ble_state.dart';
 
 class ConnectionDetailsCubit extends Cubit<ConnectionDetailsState> {
   final HookaBleCubit _bleCubit;

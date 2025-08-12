@@ -5,10 +5,10 @@ import 'dart:io';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_reactive_ble/flutter_reactive_ble.dart';
-import 'package:hookaapp/core/services/logger/logger_service.dart';
-import 'package:hookaapp/core/services/permission/permission_service.dart';
-import 'package:hookaapp/data/ble_exceptions.dart';
-import 'package:hookaapp/features/hooka_ble/hooka_ble_state.dart';
+import 'package:coallider/core/services/logger/logger_service.dart';
+import 'package:coallider/core/services/permission/permission_service.dart';
+import 'package:coallider/data/ble_exceptions.dart';
+import 'package:coallider/features/hooka_ble/hooka_ble_state.dart';
 
 const _servicesIds = <Uuid>[];
 

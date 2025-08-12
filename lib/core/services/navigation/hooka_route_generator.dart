@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:hookaapp/core/services/navigation/hooka_routes.dart';
-import 'package:hookaapp/features/connection_details_screen/screen.dart';
-import 'package:hookaapp/features/find_nearby_devices_screen/screen.dart';
-import 'package:hookaapp/features/found_devices_screen/screen.dart';
-import 'package:hookaapp/features/pp_and_tc/privacy_policy_screen.dart';
-import 'package:hookaapp/features/pp_and_tc/terms_and_conditions_screen.dart';
+import 'package:coallider/core/services/navigation/hooka_routes.dart';
+import 'package:coallider/features/connection_details_screen/screen.dart';
+import 'package:coallider/features/find_nearby_devices_screen/screen.dart';
+import 'package:coallider/features/found_devices_screen/screen.dart';
+import 'package:coallider/features/pp_and_tc/privacy_policy_screen.dart';
+import 'package:coallider/features/pp_and_tc/terms_and_conditions_screen.dart';
 
 final class HookaRouteGenerator {
   const HookaRouteGenerator._();

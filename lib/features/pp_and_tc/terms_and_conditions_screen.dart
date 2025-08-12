@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hookaapp/features/components/hooka_appbar.dart';
-import 'package:hookaapp/features/components/hooka_close_button.dart';
-import 'package:hookaapp/features/components/hooka_web_view.dart';
+import 'package:coallider/features/components/hooka_appbar.dart';
+import 'package:coallider/features/components/hooka_close_button.dart';
+import 'package:coallider/features/components/hooka_web_view.dart';
 
 class TermsAndConditionsScreen extends StatelessWidget {
   const TermsAndConditionsScreen({super.key});

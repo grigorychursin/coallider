@@ -1,6 +1,6 @@
-import 'package:hookaapp/data/ble_device_info.dart';
-import 'package:hookaapp/data/min_max_values.dart';
-import 'package:hookaapp/features/components/progress_widget.dart';
+import 'package:coallider/data/ble_device_info.dart';
+import 'package:coallider/data/min_max_values.dart';
+import 'package:coallider/features/components/progress_widget.dart';
 
 final class ConnectionDetailsState extends ProgressState {
   @override

@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:hookaapp/core/services/storage/permission_error_count_storage.dart';
+import 'package:coallider/core/services/storage/permission_error_count_storage.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class PermissionService {

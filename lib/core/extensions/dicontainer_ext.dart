@@ -1,8 +1,8 @@
 import 'package:di/di.dart';
 import 'package:flutter_reactive_ble/flutter_reactive_ble.dart';
-import 'package:hookaapp/core/services/permission/permission_service.dart';
-import 'package:hookaapp/core/services/storage/permission_error_count_storage.dart';
-import 'package:hookaapp/core/services/storage/privacy_and_terms_storage.dart';
+import 'package:coallider/core/services/permission/permission_service.dart';
+import 'package:coallider/core/services/storage/permission_error_count_storage.dart';
+import 'package:coallider/core/services/storage/privacy_and_terms_storage.dart';
 
 extension DicontainerExt on DiContainer {
   Future<DiContainer> initApp() async {

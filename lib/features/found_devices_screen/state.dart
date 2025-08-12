@@ -1,5 +1,5 @@
 import 'package:flutter_reactive_ble/flutter_reactive_ble.dart';
-import 'package:hookaapp/features/components/progress_widget.dart';
+import 'package:coallider/features/components/progress_widget.dart';
 
 final class FoundDevicesState implements ProgressState {
   @override

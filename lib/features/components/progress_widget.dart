@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hookaapp/core/extensions/build_context_extension.dart';
+import 'package:coallider/core/extensions/build_context_extension.dart';
 
 class ProgressWidget<C extends BlocBase<S>, S extends ProgressState>
     extends StatefulWidget {

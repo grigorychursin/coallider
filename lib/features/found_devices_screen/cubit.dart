@@ -1,10 +1,10 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_reactive_ble/flutter_reactive_ble.dart';
-import 'package:hookaapp/core/services/logger/logger_service.dart';
-import 'package:hookaapp/core/services/navigation/hooka_navigator.dart';
-import 'package:hookaapp/core/services/navigation/hooka_routes.dart';
-import 'package:hookaapp/features/found_devices_screen/state.dart';
-import 'package:hookaapp/features/hooka_ble/hooka_ble_cubit.dart';
+import 'package:coallider/core/services/logger/logger_service.dart';
+import 'package:coallider/core/services/navigation/hooka_navigator.dart';
+import 'package:coallider/core/services/navigation/hooka_routes.dart';
+import 'package:coallider/features/found_devices_screen/state.dart';
+import 'package:coallider/features/hooka_ble/hooka_ble_cubit.dart';
 
 final class FoundDevicesCubit extends Cubit<FoundDevicesState> {
   final HookaBleCubit _bleCubit;

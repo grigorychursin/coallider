@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:hookaapp/core/constants/hooka_images.dart';
-import 'package:hookaapp/core/constants/hooka_texts.dart';
-import 'package:hookaapp/core/extensions/build_context_extension.dart';
-import 'package:hookaapp/core/extensions/widget_extension.dart';
-import 'package:hookaapp/features/components/hooka_appbar.dart';
-import 'package:hookaapp/features/components/max_size_sroll_view.dart';
-import 'package:hookaapp/features/find_nearby_devices_screen/components/pp_and_tc_widget.dart';
-import 'package:hookaapp/features/find_nearby_devices_screen/cubit.dart';
-import 'package:hookaapp/features/find_nearby_devices_screen/state.dart';
+import 'package:coallider/core/constants/hooka_images.dart';
+import 'package:coallider/core/constants/hooka_texts.dart';
+import 'package:coallider/core/extensions/build_context_extension.dart';
+import 'package:coallider/core/extensions/widget_extension.dart';
+import 'package:coallider/features/components/hooka_appbar.dart';
+import 'package:coallider/features/components/max_size_sroll_view.dart';
+import 'package:coallider/features/find_nearby_devices_screen/components/pp_and_tc_widget.dart';
+import 'package:coallider/features/find_nearby_devices_screen/cubit.dart';
+import 'package:coallider/features/find_nearby_devices_screen/state.dart';
 
 class FindNearbyDevicesScreen extends StatefulWidget {
   const FindNearbyDevicesScreen({super.key});

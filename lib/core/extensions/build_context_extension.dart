@@ -1,7 +1,7 @@
 import 'package:di/di.dart';
 import 'package:flutter/material.dart';
-import 'package:hookaapp/core/services/navigation/hooka_navigator.dart';
-import 'package:hookaapp/core/theme/hooka_theme_cubit.dart';
+import 'package:coallider/core/services/navigation/hooka_navigator.dart';
+import 'package:coallider/core/theme/hooka_theme_cubit.dart';
 import 'package:provider/provider.dart';
 
 extension BuildContextExtension on BuildContext {

@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hookaapp/core/constants/hooka_texts.dart';
-import 'package:hookaapp/core/extensions/build_context_extension.dart';
-import 'package:hookaapp/core/extensions/widget_extension.dart';
-import 'package:hookaapp/features/components/hooka_appbar.dart';
-import 'package:hookaapp/features/components/hooka_bottom_bar.dart';
-import 'package:hookaapp/features/components/hooka_button.dart';
-import 'package:hookaapp/features/components/hooka_outlined_button.dart';
-import 'package:hookaapp/features/components/max_size_sroll_view.dart';
-import 'package:hookaapp/features/components/progress_widget.dart';
-import 'package:hookaapp/features/connection_details_screen/components/bottom_temperature_card.dart';
-import 'package:hookaapp/features/connection_details_screen/components/connected_device_card.dart';
-import 'package:hookaapp/features/connection_details_screen/components/details_switch.dart';
-import 'package:hookaapp/features/connection_details_screen/components/spiral_power_card.dart';
-import 'package:hookaapp/features/connection_details_screen/components/system_status_card.dart';
-import 'package:hookaapp/features/connection_details_screen/cubit.dart';
-import 'package:hookaapp/features/connection_details_screen/state.dart';
+import 'package:coallider/core/constants/hooka_texts.dart';
+import 'package:coallider/core/extensions/build_context_extension.dart';
+import 'package:coallider/core/extensions/widget_extension.dart';
+import 'package:coallider/features/components/hooka_appbar.dart';
+import 'package:coallider/features/components/hooka_bottom_bar.dart';
+import 'package:coallider/features/components/hooka_button.dart';
+import 'package:coallider/features/components/hooka_outlined_button.dart';
+import 'package:coallider/features/components/max_size_sroll_view.dart';
+import 'package:coallider/features/components/progress_widget.dart';
+import 'package:coallider/features/connection_details_screen/components/bottom_temperature_card.dart';
+import 'package:coallider/features/connection_details_screen/components/connected_device_card.dart';
+import 'package:coallider/features/connection_details_screen/components/details_switch.dart';
+import 'package:coallider/features/connection_details_screen/components/spiral_power_card.dart';
+import 'package:coallider/features/connection_details_screen/components/system_status_card.dart';
+import 'package:coallider/features/connection_details_screen/cubit.dart';
+import 'package:coallider/features/connection_details_screen/state.dart';
 
 class ConnectionDetailsScreen extends StatefulWidget {
   const ConnectionDetailsScreen({super.key});

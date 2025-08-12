@@ -1,4 +1,4 @@
-import 'package:hookaapp/features/components/progress_widget.dart';
+import 'package:coallider/features/components/progress_widget.dart';
 import 'package:quiver/core.dart';
 
 class FindNearbyDevicesState extends ProgressState {

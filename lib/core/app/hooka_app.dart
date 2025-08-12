@@ -1,12 +1,12 @@
 import 'package:di/di.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hookaapp/core/services/navigation/hooka_navigator.dart';
-import 'package:hookaapp/core/services/navigation/hooka_route_generator.dart';
-import 'package:hookaapp/core/services/navigation/hooka_routes.dart';
-import 'package:hookaapp/core/theme/hooka_theme.dart';
-import 'package:hookaapp/core/theme/hooka_theme_cubit.dart';
-import 'package:hookaapp/features/hooka_ble/hooka_ble_cubit.dart';
+import 'package:coallider/core/services/navigation/hooka_navigator.dart';
+import 'package:coallider/core/services/navigation/hooka_route_generator.dart';
+import 'package:coallider/core/services/navigation/hooka_routes.dart';
+import 'package:coallider/core/theme/hooka_theme.dart';
+import 'package:coallider/core/theme/hooka_theme_cubit.dart';
+import 'package:coallider/features/hooka_ble/hooka_ble_cubit.dart';
 import 'package:provider/provider.dart';
 
 final _navigatorKey = GlobalKey<NavigatorState>();

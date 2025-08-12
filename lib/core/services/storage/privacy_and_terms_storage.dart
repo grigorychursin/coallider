@@ -1,4 +1,4 @@
-import 'package:hookaapp/core/services/storage/hooka_storage.dart';
+import 'package:coallider/core/services/storage/hooka_storage.dart';
 
 class PrivacyAndTermsStorage extends HiveStorage<bool> {
   static const String _boxKey = 'privacy_and_terms_checkbox';

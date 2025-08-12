@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:hookaapp/core/constants/hooka_colors.dart';
-import 'package:hookaapp/core/extensions/build_context_extension.dart';
-import 'package:hookaapp/core/services/navigation/hooka_navigator.dart';
-import 'package:hookaapp/core/services/navigation/hooka_routes.dart';
-import 'package:hookaapp/features/find_nearby_devices_screen/cubit.dart';
+import 'package:coallider/core/constants/hooka_colors.dart';
+import 'package:coallider/core/extensions/build_context_extension.dart';
+import 'package:coallider/core/services/navigation/hooka_navigator.dart';
+import 'package:coallider/core/services/navigation/hooka_routes.dart';
+import 'package:coallider/features/find_nearby_devices_screen/cubit.dart';
 import 'package:provider/provider.dart';
 
 class PpAndTcWidget extends StatelessWidget {
