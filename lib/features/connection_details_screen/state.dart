@@ -8,7 +8,7 @@ final class ConnectionDetailsState extends ProgressState {
   final String deviceName;
   final bool showEasy;
   final BleDeviceInfo deviceInfo;
-  final bool isHookahOn;
+  final bool isOn;
   final int targetBottomTemperature;
   final int targetSpiralPower;
   final MinMaxValues<int> spiralPowerMinMaxValues;
@@ -20,7 +20,7 @@ final class ConnectionDetailsState extends ProgressState {
     required this.deviceName,
     required this.showEasy,
     required this.deviceInfo,
-    required this.isHookahOn,
+    required this.isOn,
     required this.targetBottomTemperature,
     required this.targetSpiralPower,
     required this.spiralPowerMinMaxValues,
@@ -33,7 +33,7 @@ final class ConnectionDetailsState extends ProgressState {
     String? deviceName,
     bool? showEasy,
     BleDeviceInfo? deviceInfo,
-    bool? isHookahOn,
+    bool? isOn,
     int? targetBottomTemperature,
     int? targetSpiralPower,
     SliderState? sliderState,
@@ -43,7 +43,7 @@ final class ConnectionDetailsState extends ProgressState {
       deviceName: deviceName ?? this.deviceName,
       showEasy: showEasy ?? this.showEasy,
       deviceInfo: deviceInfo ?? this.deviceInfo,
-      isHookahOn: isHookahOn ?? this.isHookahOn,
+      isOn: isOn ?? this.isOn,
       targetBottomTemperature:
           targetBottomTemperature ?? this.targetBottomTemperature,
       targetSpiralPower: targetSpiralPower ?? this.targetSpiralPower,

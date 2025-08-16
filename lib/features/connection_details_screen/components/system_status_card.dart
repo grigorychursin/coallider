@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:coallider/core/constants/hooka_colors.dart';
-import 'package:coallider/core/constants/hooka_texts.dart';
+import 'package:coallider/core/constants/app_colors.dart';
+import 'package:coallider/core/constants/app_texts.dart';
 import 'package:coallider/core/extensions/build_context_extension.dart';
 import 'package:coallider/core/extensions/widget_extension.dart';
 import 'package:coallider/data/enums/device_state.dart';
@@ -20,15 +20,15 @@ class SystemStatusCard extends StatelessWidget {
       padding: EdgeInsets.all(16.0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(24.0),
-        color: isLightTheme ? HookaColors.purpleLight : Colors.transparent,
-        border: isLightTheme ? null : Border.all(color: HookaColors.grey45),
+        color: isLightTheme ? AppColors.purpleLight : Colors.transparent,
+        border: isLightTheme ? null : Border.all(color: AppColors.grey45),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            HookaTexts.systemStatus,
+            AppTexts.systemStatus,
             style: context.textTheme.headlineLarge!.copyWith(fontSize: 14.0),
           ),
           _StatusWidget(
@@ -51,7 +51,7 @@ class _StatusWidget extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(4.5),
       decoration: BoxDecoration(
-        color: context.isLightTheme ? null : HookaColors.white.withAlpha(20),
+        color: context.isLightTheme ? null : AppColors.white.withAlpha(20),
         borderRadius: BorderRadius.circular(100.0),
       ),
       child: Row(
@@ -76,9 +76,9 @@ extension on DeviceState {
   String getStringInterpretation() {
     switch (this) {
       case DeviceState.heating:
-        return HookaTexts.heating;
+        return AppTexts.heating;
       case DeviceState.standBy:
-        return HookaTexts.standBy;
+        return AppTexts.standBy;
     }
   }
 }

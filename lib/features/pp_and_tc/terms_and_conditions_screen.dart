@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:coallider/features/components/hooka_appbar.dart';
-import 'package:coallider/features/components/hooka_close_button.dart';
-import 'package:coallider/features/components/hooka_web_view.dart';
+import 'package:coallider/features/components/app_appbar.dart';
+import 'package:coallider/features/components/app_close_button.dart';
+import 'package:coallider/features/components/app_web_view.dart';
 
 class TermsAndConditionsScreen extends StatelessWidget {
   const TermsAndConditionsScreen({super.key});
@@ -9,13 +9,13 @@ class TermsAndConditionsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: hookaAppBar(
+      appBar: thisAppBar(
         context: context,
         applyLeading: true,
-        leading: const HookaCloseButton(),
+        leading: const AppCloseButton(),
       ),
       body: SizedBox.expand(
-        child: HookaWebView(path: 'https://coallider.ru/oferta'),
+        child: AppWebView(path: 'https://coallider.ru/oferta'),
       ),
     );
   }

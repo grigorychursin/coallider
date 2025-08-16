@@ -1,20 +1,20 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:coallider/core/services/navigation/hooka_navigator.dart';
-import 'package:coallider/core/services/navigation/hooka_routes.dart';
+import 'package:coallider/core/services/navigation/app_navigator.dart';
+import 'package:coallider/core/services/navigation/app_routes.dart';
 import 'package:coallider/core/services/storage/privacy_and_terms_storage.dart';
 import 'package:coallider/data/ble_exceptions.dart';
 import 'package:coallider/features/find_nearby_devices_screen/state.dart';
-import 'package:coallider/features/hooka_ble/hooka_ble_cubit.dart';
+import 'package:coallider/features/ble/app_ble_cubit.dart';
 import 'package:quiver/core.dart';
 
 class FindNearbyDevicesCubit extends Cubit<FindNearbyDevicesState> {
-  final HookaNavigator _navigator;
+  final AppNavigator _navigator;
   final PrivacyAndTermsStorage _storage;
-  final HookaBleCubit _bleCubit;
+  final AppBleCubit _bleCubit;
   FindNearbyDevicesCubit({
-    required final HookaNavigator navigator,
+    required final AppNavigator navigator,
     required PrivacyAndTermsStorage storage,
-    required HookaBleCubit bleCubit,
+    required AppBleCubit bleCubit,
   }) : _storage = storage,
        _navigator = navigator,
        _bleCubit = bleCubit,
@@ -26,7 +26,7 @@ class FindNearbyDevicesCubit extends Cubit<FindNearbyDevicesState> {
       if (state.areTermsAndPrivacyAccepted) {
         await _bleCubit.stopScan();
         await _bleCubit.findDevices();
-        await _navigator.pushNamed(HookaRoutes.foundDevicesScreen);
+        await _navigator.pushNamed(AppRoutes.foundDevicesScreen);
       } else {
         emit(
           state.copyWith(

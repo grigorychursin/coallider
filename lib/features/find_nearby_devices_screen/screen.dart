@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:coallider/core/constants/hooka_images.dart';
-import 'package:coallider/core/constants/hooka_texts.dart';
+import 'package:coallider/core/constants/app_images.dart';
+import 'package:coallider/core/constants/app_texts.dart';
 import 'package:coallider/core/extensions/build_context_extension.dart';
 import 'package:coallider/core/extensions/widget_extension.dart';
-import 'package:coallider/features/components/hooka_appbar.dart';
+import 'package:coallider/features/components/app_appbar.dart';
 import 'package:coallider/features/components/max_size_sroll_view.dart';
 import 'package:coallider/features/find_nearby_devices_screen/components/pp_and_tc_widget.dart';
 import 'package:coallider/features/find_nearby_devices_screen/cubit.dart';
@@ -41,7 +41,7 @@ class _FindNearbyDevicesScreenState extends State<FindNearbyDevicesScreen> {
   Widget build(BuildContext context) {
     final overlayColor = Colors.white.withOpacity(0.1);
     return Scaffold(
-      appBar: hookaAppBar(context: context, applyLeading: false),
+      appBar: thisAppBar(context: context, applyLeading: false),
       body: BlocProvider.value(
         value: _cubit,
         child: BlocConsumer<FindNearbyDevicesCubit, FindNearbyDevicesState>(
@@ -58,7 +58,7 @@ class _FindNearbyDevicesScreenState extends State<FindNearbyDevicesScreen> {
               child: Column(
                 children: [
                   Text(
-                    HookaTexts.nearbyDevices,
+                    AppTexts.nearbyDevices,
                     style: context.textTheme.titleLarge,
                     textAlign: TextAlign.center,
                   ),
@@ -71,8 +71,8 @@ class _FindNearbyDevicesScreenState extends State<FindNearbyDevicesScreen> {
                       children: [
                         SvgPicture.asset(
                           context.isLightTheme
-                              ? HookaImages.nearbyDevicesLight
-                              : HookaImages.nearbyDevicesDark,
+                              ? AppImages.nearbyDevicesLight
+                              : AppImages.nearbyDevicesDark,
                           fit: BoxFit.cover,
                           width: context.mediaQuery.size.width,
                         ),
@@ -123,8 +123,8 @@ class _FindNearbyDevicesScreenState extends State<FindNearbyDevicesScreen> {
 String _errorText(FindNearbyDevicesErrors error) {
   switch (error) {
     case FindNearbyDevicesErrors.privacyAndTermsNotAccepted:
-      return HookaTexts.privacyAndTermsNotAccepted;
+      return AppTexts.privacyAndTermsNotAccepted;
     case FindNearbyDevicesErrors.permissionNotGranted:
-      return HookaTexts.permissionNotGranted;
+      return AppTexts.permissionNotGranted;
   }
 }

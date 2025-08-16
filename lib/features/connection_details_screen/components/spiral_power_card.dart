@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:coallider/core/constants/hooka_colors.dart';
-import 'package:coallider/core/constants/hooka_texts.dart';
+import 'package:coallider/core/constants/app_colors.dart';
+import 'package:coallider/core/constants/app_texts.dart';
 import 'package:coallider/core/extensions/build_context_extension.dart';
 import 'package:coallider/core/extensions/int_ext.dart';
 import 'package:coallider/core/extensions/widget_extension.dart';
 import 'package:coallider/data/enums/spiral_state.dart';
-import 'package:coallider/features/components/hooka_value_displayer.dart';
+import 'package:coallider/features/components/app_value_displayer.dart';
 import 'package:coallider/features/connection_details_screen/cubit.dart';
 import 'package:provider/provider.dart';
 
@@ -21,12 +21,12 @@ class SpiralPowerCard extends StatelessWidget {
       margin: EdgeInsets.only(bottom: 16.0),
       decoration: BoxDecoration(
         color:
-            context.isLightTheme ? HookaColors.purpleLight : Colors.transparent,
+            context.isLightTheme ? AppColors.purpleLight : Colors.transparent,
         border: Border.all(
           color:
               context.isLightTheme
-                  ? HookaColors.purpleLight
-                  : HookaColors.grey45,
+                  ? AppColors.purpleLight
+                  : AppColors.grey45,
         ),
         borderRadius: BorderRadius.circular(24.0),
       ),
@@ -35,8 +35,8 @@ class SpiralPowerCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(HookaTexts.spiralPower, style: textTheme.headlineSmall),
-              HookaValueDisplayer(
+              Text(AppTexts.spiralPower, style: textTheme.headlineSmall),
+              AppValueDisplayer(
                 value: state.deviceInfo.spiralPower.toStringWithPercentSign,
                 inProgress: !state.deviceInfo.spiralState.isOk,
               ),

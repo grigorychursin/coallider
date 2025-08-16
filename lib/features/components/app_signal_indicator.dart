@@ -1,16 +1,16 @@
+import 'package:coallider/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:coallider/core/constants/hooka_colors.dart';
 import 'package:coallider/core/extensions/build_context_extension.dart';
 import 'package:signal_strength_indicator/signal_strength_indicator.dart';
 
-class HookaSignalIndicator extends StatelessWidget {
+class AppSignalIndicator extends StatelessWidget {
   final int value;
-  const HookaSignalIndicator({super.key, required this.value});
+  const AppSignalIndicator({super.key, required this.value});
 
   @override
   Widget build(BuildContext context) {
     final barColor =
-        context.isLightTheme ? HookaColors.black : HookaColors.white;
+        context.isLightTheme ? AppColors.black : AppColors.white;
     return SignalStrengthIndicator.bars(
       value: value,
       minValue: 0,

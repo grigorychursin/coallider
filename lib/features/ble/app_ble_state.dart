@@ -1,25 +1,25 @@
 import 'package:flutter_reactive_ble/flutter_reactive_ble.dart';
 
-final class HookaBleState {
+final class AppBleState {
   final List<DiscoveredDevice> devices;
   final Stream<ConnectionStateUpdate>? connectionStateStream;
   final DiscoveredDevice? selectedDevice;
   final List<Service> discoveredServices;
 
-  HookaBleState({
+  AppBleState({
     required this.devices,
     this.connectionStateStream,
     this.selectedDevice,
     this.discoveredServices = const [],
   });
 
-  HookaBleState copyWith({
+  AppBleState copyWith({
     List<DiscoveredDevice>? devices,
     Stream<ConnectionStateUpdate>? connectionStateStream,
     DiscoveredDevice? selectedDevice,
     List<Service>? discoveredServices,
   }) {
-    return HookaBleState(
+    return AppBleState(
       devices: devices ?? this.devices,
       connectionStateStream:
           connectionStateStream ?? this.connectionStateStream,

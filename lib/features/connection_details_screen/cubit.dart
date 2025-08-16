@@ -1,26 +1,26 @@
 import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:coallider/core/services/logger/logger_service.dart';
-import 'package:coallider/core/services/navigation/hooka_navigator.dart';
+import 'package:coallider/core/services/navigation/app_navigator.dart';
 import 'package:coallider/data/ble_device_info.dart';
 import 'package:coallider/data/enums/bottom_state.dart';
 import 'package:coallider/data/enums/device_state.dart';
 import 'package:coallider/data/enums/spiral_state.dart';
 import 'package:coallider/data/min_max_values.dart';
 import 'package:coallider/features/connection_details_screen/state.dart';
-import 'package:coallider/features/hooka_ble/hooka_ble_cubit.dart';
-import 'package:coallider/features/hooka_ble/hooka_ble_state.dart';
+import 'package:coallider/features/ble/app_ble_cubit.dart';
+import 'package:coallider/features/ble/app_ble_state.dart';
 
 class ConnectionDetailsCubit extends Cubit<ConnectionDetailsState> {
-  final HookaBleCubit _bleCubit;
+  final AppBleCubit _bleCubit;
   StreamSubscription<List<int>>? _manualChangesStreamSubscription;
   StreamSubscription<List<int>>? _automaticChangesStreamSubscription;
   Timer? _timer;
   int _elapsedSeconds = 0;
 
   ConnectionDetailsCubit({
-    required final HookaBleCubit bleCubit,
-    required HookaNavigator navigator,
+    required final AppBleCubit bleCubit,
+    required AppNavigator navigator,
   }) : _bleCubit = bleCubit,
        super(_buildInitialState(bleCubit.state));
 
@@ -65,7 +65,7 @@ class ConnectionDetailsCubit extends Cubit<ConnectionDetailsState> {
         targetBottomTemperature:
             isSynchronized ? null : int.tryParse(parsedBody[1])!,
         targetSpiralPower: isSynchronized ? null : int.tryParse(parsedBody[1])!,
-        isHookahOn: int.tryParse(parsedBody[0]) == 1,
+        isOn: int.tryParse(parsedBody[0]) == 1,
         sliderState: !isSynchronized ? SliderState.synchronized : null,
       ),
     );
@@ -133,7 +133,7 @@ class ConnectionDetailsCubit extends Cubit<ConnectionDetailsState> {
   }
 
   void onConnectionButtonTap() async {
-    emit(state.copyWith(isHookahOn: !state.isHookahOn));
+    emit(state.copyWith(isOn: !state.isOn));
     await _bleCubit.sendCommand(state.buildCommand());
   }
 
@@ -147,7 +147,7 @@ class ConnectionDetailsCubit extends Cubit<ConnectionDetailsState> {
   }
 }
 
-ConnectionDetailsState _buildInitialState(final HookaBleState bleState) {
+ConnectionDetailsState _buildInitialState(final AppBleState bleState) {
   final selectedDevice = bleState.devices.firstWhere(
     (device) => device.id == bleState.selectedDevice!.id,
   );
@@ -164,7 +164,7 @@ ConnectionDetailsState _buildInitialState(final HookaBleState bleState) {
       timeSinceStart: 0,
       heatingTime: 0,
     ),
-    isHookahOn: false,
+    isOn: false,
     targetBottomTemperature: _bottomTemperatureMinMaxValues.min,
     targetSpiralPower: _spiralPowerMinMaxValues.min,
     spiralPowerMinMaxValues: _spiralPowerMinMaxValues,
@@ -179,7 +179,7 @@ extension ConnectionDetailsStateCommandExtension on ConnectionDetailsState {
     int? bottomTemperature,
     int? spiralPower,
   }) {
-    final deviceState = isHookahOn ? 1 : 0;
+    final deviceState = isOn ? 1 : 0;
     final waterFlowValue = waterFlow ?? 0;
     final command =
         'com:$deviceState,$targetBottomTemperature,$targetSpiralPower,${waterFlowValue}end';

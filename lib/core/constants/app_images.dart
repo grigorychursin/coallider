@@ -1,5 +1,5 @@
-final class HookaImages {
-  const HookaImages._();
+final class AppImages {
+  const AppImages._();
   static const nearbyDevicesLight = 'assets/images/nearby_devices_light.svg';
   static const nearbyDevicesDark = 'assets/images/nearby_devices_dark.svg';
   static const home = 'assets/images/home.svg';

@@ -1,11 +1,11 @@
+import 'package:coallider/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:coallider/core/constants/hooka_colors.dart';
-import 'package:coallider/core/constants/hooka_texts.dart';
+import 'package:coallider/core/constants/app_texts.dart';
 import 'package:coallider/core/extensions/build_context_extension.dart';
 import 'package:coallider/core/extensions/widget_extension.dart';
-import 'package:coallider/features/components/hooka_tap_animation_handler.dart';
+import 'package:coallider/features/components/app_tap_animation_handler.dart';
 import 'package:coallider/features/connection_details_screen/cubit.dart';
 
 class DetailsSwitch extends StatelessWidget {
@@ -17,7 +17,7 @@ class DetailsSwitch extends StatelessWidget {
     final cubit = context.read<ConnectionDetailsCubit>();
     final borderColor = context.colorScheme.tertiary;
     final fillColor =
-        context.isLightTheme ? HookaColors.purpleLight : Colors.transparent;
+        context.isLightTheme ? AppColors.purpleLight : Colors.transparent;
     return Container(
       height: 40.0,
       width: double.maxFinite,
@@ -31,14 +31,14 @@ class DetailsSwitch extends StatelessWidget {
         children: [
           _SwitchItem(
             isActive: isEasy,
-            text: HookaTexts.easy,
+            text: AppTexts.easy,
             onTap: () {
               cubit.toogleSwitch(true);
             },
           ).expanded(),
           _SwitchItem(
             isActive: !isEasy,
-            text: HookaTexts.full,
+            text: AppTexts.full,
             onTap: () {
               cubit.toogleSwitch(false);
             },
@@ -62,12 +62,12 @@ class _SwitchItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final inactiveFillColor =
-        context.isLightTheme ? HookaColors.purpleLight : Colors.transparent;
+        context.isLightTheme ? AppColors.purpleLight : Colors.transparent;
     final activeTextColor =
-        context.isLightTheme ? HookaColors.white : Colors.black;
+        context.isLightTheme ? AppColors.white : Colors.black;
     final inactiveTextColor =
-        context.isLightTheme ? HookaColors.textPurple : HookaColors.white;
-    return HookaTapAnimationHandler(
+        context.isLightTheme ? AppColors.textPurple : AppColors.white;
+    return AppTapAnimationHandler(
       onTap: onTap,
       child: Container(
         height: 34.0,

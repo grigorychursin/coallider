@@ -1,17 +1,17 @@
+import 'package:coallider/features/components/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:coallider/core/constants/hooka_texts.dart';
+import 'package:coallider/core/constants/app_texts.dart';
 import 'package:coallider/core/extensions/build_context_extension.dart';
 import 'package:coallider/core/extensions/widget_extension.dart';
-import 'package:coallider/features/components/hooka_appbar.dart';
-import 'package:coallider/features/components/hooka_bottom_bar.dart';
-import 'package:coallider/features/components/hooka_button.dart';
+import 'package:coallider/features/components/app_appbar.dart';
+import 'package:coallider/features/components/app_bottom_bar.dart';
 import 'package:coallider/features/components/progress_widget.dart';
 import 'package:coallider/features/found_devices_screen/components/found_device_item.dart';
 import 'package:coallider/features/found_devices_screen/cubit.dart';
 import 'package:coallider/features/found_devices_screen/state.dart';
-import 'package:coallider/features/hooka_ble/hooka_ble_cubit.dart';
-import 'package:coallider/features/hooka_ble/hooka_ble_state.dart';
+import 'package:coallider/features/ble/app_ble_cubit.dart';
+import 'package:coallider/features/ble/app_ble_state.dart';
 
 class FoundDevicesScreen extends StatefulWidget {
   const FoundDevicesScreen({super.key});
@@ -33,10 +33,10 @@ class _FoundDevicesScreenState extends State<FoundDevicesScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final bleCubit = context.read<HookaBleCubit>();
+    final bleCubit = context.read<AppBleCubit>();
     return ProgressWidget<FoundDevicesCubit, FoundDevicesState>(
       bloc: _cubit,
-      child: BlocListener<HookaBleCubit, HookaBleState>(
+      child: BlocListener<AppBleCubit, AppBleState>(
         listener: (_, __) {
           _cubit.onDevicesListChanged();
         },
@@ -46,7 +46,7 @@ class _FoundDevicesScreenState extends State<FoundDevicesScreen> {
             bloc: _cubit,
             builder: (context, state) {
               return Scaffold(
-                appBar: hookaAppBar(
+                appBar: thisAppBar(
                   context: context,
                   applyLeading: true,
                   applyTitle: false,
@@ -55,7 +55,7 @@ class _FoundDevicesScreenState extends State<FoundDevicesScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      HookaTexts.foundDevices,
+                      AppTexts.foundDevices,
                       style: context.textTheme.titleMedium,
                     ),
                     Expanded(
@@ -72,12 +72,12 @@ class _FoundDevicesScreenState extends State<FoundDevicesScreen> {
                       ),
                     ),
 
-                    HookaButton(
+                    AppButton(
                       onTap: _cubit.onRetry,
-                      text: HookaTexts.tryAgain,
+                      text: AppTexts.tryAgain,
                       isActive: true,
                     ).paddingOnly(top: 16.0, bottom: 20.0),
-                    const HookaBottomBar(topMargin: 20.0),
+                    const AppBottomBar(topMargin: 20.0),
                     SizedBox(height: 16.0),
                   ],
                 ).paddingSymmetric(h: 16.0),

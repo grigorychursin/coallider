@@ -1,5 +1,5 @@
-final class HookaTexts {
-  const HookaTexts._();
+final class AppTexts {
+  const AppTexts._();
   static const appName = 'Coallider';
   // find nearby devices screen
   static const nearbyDevices = 'Устройства\nпоблизоcти';

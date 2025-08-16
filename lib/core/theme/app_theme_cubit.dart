@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class HookaThemeCubit extends Cubit<HookaThemeState> {
+class AppThemeCubit extends Cubit<AppThemeState> {
   final _platformDispatcher = WidgetsBinding.instance.platformDispatcher;
-  HookaThemeCubit() : super(_buildThemeMode()){
+  AppThemeCubit() : super(_buildThemeMode()){
     initialize();
   }
   void initialize() {
@@ -16,15 +16,15 @@ class HookaThemeCubit extends Cubit<HookaThemeState> {
   }
 }
 
-HookaThemeState _buildThemeMode() {
+AppThemeState _buildThemeMode() {
   final brightness =
       WidgetsBinding.instance.platformDispatcher.platformBrightness;
   final themeMode =
       brightness == Brightness.light ? ThemeMode.light : ThemeMode.dark;
-  return HookaThemeState(mode: themeMode);
+  return AppThemeState(mode: themeMode);
 }
 
-class HookaThemeState {
+class AppThemeState {
   final ThemeMode mode;
-  const HookaThemeState({required this.mode});
+  const AppThemeState({required this.mode});
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:coallider/core/constants/hooka_colors.dart';
+import 'package:coallider/core/constants/app_colors.dart';
 import 'package:coallider/core/extensions/build_context_extension.dart';
-import 'package:coallider/core/services/navigation/hooka_navigator.dart';
-import 'package:coallider/core/services/navigation/hooka_routes.dart';
+import 'package:coallider/core/services/navigation/app_navigator.dart';
+import 'package:coallider/core/services/navigation/app_routes.dart';
 import 'package:coallider/features/find_nearby_devices_screen/cubit.dart';
 import 'package:provider/provider.dart';
 
@@ -25,13 +25,13 @@ class PpAndTcWidget extends StatelessWidget {
             _Item(
               plainText: 'Я согласен с',
               highlightedText: ' "Политикой использования"',
-              screenPath: HookaRoutes.termsAndConditions,
+              screenPath: AppRoutes.termsAndConditions,
             ),
             const SizedBox(height: 8),
             _Item(
               plainText: 'и принимаю',
               highlightedText: ' "Политику конфиденциальности"',
-              screenPath: HookaRoutes.privacyPolicy,
+              screenPath: AppRoutes.privacyPolicy,
             ),
           ],
         ),
@@ -59,12 +59,12 @@ class _Item extends StatelessWidget {
         Text(
           plainText,
           style: textTheme.headlineSmall!.copyWith(
-            color: context.isLightTheme ? HookaColors.black : null,
+            color: context.isLightTheme ? AppColors.black : null,
           ),
         ),
         GestureDetector(
           onTap: () {
-            context.read<HookaNavigator>().pushNamed(screenPath);
+            context.read<AppNavigator>().pushNamed(screenPath);
           },
           child: Text(
             highlightedText,

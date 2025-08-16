@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class HookaTapAnimationHandler extends StatefulWidget {
+class AppTapAnimationHandler extends StatefulWidget {
   final VoidCallback onTap;
   final VoidCallback? onTapUp;
   final VoidCallback? onTapDown;
   final Widget child;
 
-  const HookaTapAnimationHandler({
+  const AppTapAnimationHandler({
     super.key,
     required this.onTap,
     this.onTapUp,
@@ -15,11 +15,11 @@ class HookaTapAnimationHandler extends StatefulWidget {
   });
 
   @override
-  State<HookaTapAnimationHandler> createState() =>
-      _HookaTapAnimationHandlerState();
+  State<AppTapAnimationHandler> createState() =>
+      _AppTapAnimationHandlerState();
 }
 
-class _HookaTapAnimationHandlerState extends State<HookaTapAnimationHandler> {
+class _AppTapAnimationHandlerState extends State<AppTapAnimationHandler> {
   double _opacity = 1.0;
 
   void _onTapDown(TapDownDetails details) {

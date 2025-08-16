@@ -1,5 +1,5 @@
-final class HookaRoutes {
-  const HookaRoutes._();
+final class AppRoutes {
+  const AppRoutes._();
   static const home = '/';
   static const foundDevicesScreen = 'found_devices';
   static const connectionDetails = 'connection_details';

@@ -1,21 +1,21 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:coallider/core/constants/hooka_texts.dart';
+import 'package:coallider/core/constants/app_texts.dart';
 import 'package:coallider/core/extensions/build_context_extension.dart';
 import 'package:coallider/core/extensions/widget_extension.dart';
-import 'package:coallider/features/components/hooka_arrow_back.dart';
+import 'package:coallider/features/components/app_arrow_back.dart';
 
-AppBar hookaAppBar({
+AppBar thisAppBar({
   required BuildContext context,
   bool applyLeading = true,
   bool applyTitle = true,
-  Widget leading = const HookaArrowBack(),
+  Widget leading = const AppArrowBack(),
 }) {
   return AppBar(
     title:
         applyTitle
-            ? Text(HookaTexts.appName, style: context.textTheme.titleSmall)
+            ? Text(AppTexts.appName, style: context.textTheme.titleSmall)
             : null,
     leadingWidth: 56.0,
     notificationPredicate: (notification) => false,

@@ -1,39 +1,39 @@
+import 'package:coallider/core/theme/app_theme_cubit.dart';
+import 'package:coallider/features/ble/app_ble_cubit.dart';
 import 'package:di/di.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:coallider/core/services/navigation/hooka_navigator.dart';
-import 'package:coallider/core/services/navigation/hooka_route_generator.dart';
-import 'package:coallider/core/services/navigation/hooka_routes.dart';
-import 'package:coallider/core/theme/hooka_theme.dart';
-import 'package:coallider/core/theme/hooka_theme_cubit.dart';
-import 'package:coallider/features/hooka_ble/hooka_ble_cubit.dart';
+import 'package:coallider/core/services/navigation/app_navigator.dart';
+import 'package:coallider/core/services/navigation/app_route_generator.dart';
+import 'package:coallider/core/services/navigation/app_routes.dart';
+import 'package:coallider/core/theme/app_theme.dart';
 import 'package:provider/provider.dart';
 
 final _navigatorKey = GlobalKey<NavigatorState>();
 
-class HookaApp extends StatelessWidget {
+class App extends StatelessWidget {
   final DiContainer diContainer;
-  const HookaApp({super.key, required this.diContainer});
+  const App({super.key, required this.diContainer});
 
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<HookaThemeCubit>(create: (context) => HookaThemeCubit()),
-        BlocProvider<HookaBleCubit>(
+        BlocProvider<AppThemeCubit>(create: (context) => AppThemeCubit()),
+        BlocProvider<AppBleCubit>(
           create:
-              (context) => HookaBleCubit(
+              (context) => AppBleCubit(
                 ble: diContainer.resolve(),
                 permissionService: diContainer.resolve(),
               ),
         ),
       ],
-      child: BlocBuilder<HookaThemeCubit, HookaThemeState>(
+      child: BlocBuilder<AppThemeCubit, AppThemeState>(
         builder: (context, state) {
           return MultiProvider(
             providers: [
               Provider.value(
-                value: HookaNavigator(navigatorKey: _navigatorKey),
+                value: AppNavigator(navigatorKey: _navigatorKey),
               ),
               Provider<Resolver>.value(value: diContainer),
             ],
@@ -41,11 +41,11 @@ class HookaApp extends StatelessWidget {
               themeMode: state.mode,
               themeAnimationCurve: Curves.easeInOut,
               themeAnimationDuration: const Duration(milliseconds: 700),
-              theme: HookaTheme().light,
-              darkTheme: HookaTheme().dark,
+              theme: AppTheme().light,
+              darkTheme: AppTheme().dark,
               debugShowCheckedModeBanner: false,
-              onGenerateRoute: HookaRouteGenerator.onGenerateRoute,
-              initialRoute: HookaRoutes.home,
+              onGenerateRoute: AppRouteGenerator.onGenerateRoute,
+              initialRoute: AppRoutes.home,
               navigatorKey: _navigatorKey,
             ),
           );

@@ -1,29 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:coallider/core/services/navigation/hooka_routes.dart';
+import 'package:coallider/core/services/navigation/app_routes.dart';
 import 'package:coallider/features/connection_details_screen/screen.dart';
 import 'package:coallider/features/find_nearby_devices_screen/screen.dart';
 import 'package:coallider/features/found_devices_screen/screen.dart';
 import 'package:coallider/features/pp_and_tc/privacy_policy_screen.dart';
 import 'package:coallider/features/pp_and_tc/terms_and_conditions_screen.dart';
 
-final class HookaRouteGenerator {
-  const HookaRouteGenerator._();
+final class AppRouteGenerator {
+  const AppRouteGenerator._();
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     late final Widget route;
     switch (settings.name) {
-      case HookaRoutes.home:
+      case AppRoutes.home:
         route = const FindNearbyDevicesScreen();
         break;
-      case HookaRoutes.foundDevicesScreen:
+      case AppRoutes.foundDevicesScreen:
         route = const FoundDevicesScreen();
         break;
-      case HookaRoutes.connectionDetails:
+      case AppRoutes.connectionDetails:
         route = const ConnectionDetailsScreen();
         break;
-      case HookaRoutes.privacyPolicy:
+      case AppRoutes.privacyPolicy:
         route = const PrivacyPolicyScreen();
         break;
-      case HookaRoutes.termsAndConditions:
+      case AppRoutes.termsAndConditions:
         route = const TermsAndConditionsScreen();
         break;
     }

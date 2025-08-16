@@ -1,12 +1,12 @@
+import 'package:coallider/features/components/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:coallider/core/constants/hooka_texts.dart';
+import 'package:coallider/core/constants/app_texts.dart';
 import 'package:coallider/core/extensions/build_context_extension.dart';
 import 'package:coallider/core/extensions/widget_extension.dart';
-import 'package:coallider/features/components/hooka_appbar.dart';
-import 'package:coallider/features/components/hooka_bottom_bar.dart';
-import 'package:coallider/features/components/hooka_button.dart';
-import 'package:coallider/features/components/hooka_outlined_button.dart';
+import 'package:coallider/features/components/app_appbar.dart';
+import 'package:coallider/features/components/app_bottom_bar.dart';
+import 'package:coallider/features/components/app_outlined_button.dart';
 import 'package:coallider/features/components/max_size_sroll_view.dart';
 import 'package:coallider/features/components/progress_widget.dart';
 import 'package:coallider/features/connection_details_screen/components/bottom_temperature_card.dart';
@@ -39,7 +39,7 @@ class _ConnectionDetailsScreenState extends State<ConnectionDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: hookaAppBar(context: context, applyLeading: true),
+      appBar: thisAppBar(context: context, applyLeading: true),
       body: BlocProvider(
         create: (_) => _cubit,
         child: BlocBuilder<ConnectionDetailsCubit, ConnectionDetailsState>(
@@ -59,28 +59,28 @@ class _ConnectionDetailsScreenState extends State<ConnectionDetailsScreen> {
                         isHiglighted: false,
                       ).paddingOnly(top: 8, bottom: 16.0),
                       Text(
-                        HookaTexts.heatStatus,
+                        AppTexts.heatStatus,
                         style: context.textTheme.headlineLarge,
                       ).paddingOnly(left: 4, bottom: 16.0),
                       if (state.showEasy) SystemStatusCard(),
                       if (!state.showEasy) BottomTemperatureCard(),
                       if (!state.showEasy) SpiralPowerCard(),
-                      HookaOutlinedButton(
+                      AppOutlinedButton(
                         onTap: () {},
                         onTapDown: _cubit.onWaterFlowButtonTapDown,
                         onTapUp: _cubit.onWaterFlowButtonTapUp,
-                        text: HookaTexts.waterFlow,
+                        text: AppTexts.waterFlow,
                       ).paddingOnly(bottom: 8.0),
-                      HookaButton(
+                      AppButton(
                         onTap: _cubit.onConnectionButtonTap,
                         text:
-                            state.isHookahOn
-                                ? HookaTexts.turnOff
-                                : HookaTexts.turnOn,
-                        isActive: !state.isHookahOn,
+                            state.isOn
+                                ? AppTexts.turnOff
+                                : AppTexts.turnOn,
+                        isActive: !state.isOn,
                       ),
                       const Spacer(),
-                      const HookaBottomBar(topMargin: 16.0),
+                      const AppBottomBar(topMargin: 16.0),
                     ],
                   ).paddingAll(16.0),
                 ),

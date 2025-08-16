@@ -1,4 +1,4 @@
-import 'package:coallider/core/services/storage/hooka_storage.dart';
+import 'package:coallider/core/services/storage/app_storage.dart';
 
 class PermissionErrorCountStorage extends HiveStorage<int> {
   static const String _boxKey = 'permission_error_count';

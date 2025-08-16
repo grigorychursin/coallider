@@ -1,14 +1,14 @@
+import 'package:coallider/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:coallider/core/constants/hooka_colors.dart';
 import 'package:coallider/core/extensions/build_context_extension.dart';
-import 'package:coallider/features/components/hooka_tap_animation_handler.dart';
+import 'package:coallider/features/components/app_tap_animation_handler.dart';
 
-class HookaOutlinedButton extends StatelessWidget {
+class AppOutlinedButton extends StatelessWidget {
   final VoidCallback onTap;
   final VoidCallback? onTapUp;
   final VoidCallback? onTapDown;
   final String text;
-  const HookaOutlinedButton({
+  const AppOutlinedButton({
     super.key,
     required this.onTap,
     this.onTapDown,
@@ -18,7 +18,7 @@ class HookaOutlinedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return HookaTapAnimationHandler(
+    return AppTapAnimationHandler(
       onTap: onTap,
       onTapDown: onTapDown,
       onTapUp: onTapUp,
@@ -30,8 +30,8 @@ class HookaOutlinedButton extends StatelessWidget {
           border: Border.all(
             color:
                 context.isLightTheme
-                    ? HookaColors.purpleF4
-                    : HookaColors.grey65,
+                    ? AppColors.purpleF4
+                    : AppColors.grey65,
           ),
         ),
         child: Center(child: Text(text, style: context.textTheme.bodyMedium)),

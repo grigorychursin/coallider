@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-final class HookaColors {
-  const HookaColors._();
+final class AppColors {
+  const AppColors._();
   // background colors
   static const backgroundLight = Color(0xffF5F5F5);
   static const backgroundDark = Color(0xff272727);

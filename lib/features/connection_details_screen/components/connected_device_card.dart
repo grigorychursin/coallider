@@ -1,11 +1,11 @@
+import 'package:coallider/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:coallider/core/constants/hooka_colors.dart';
-import 'package:coallider/core/constants/hooka_images.dart';
-import 'package:coallider/core/constants/hooka_texts.dart';
+import 'package:coallider/core/constants/app_images.dart';
+import 'package:coallider/core/constants/app_texts.dart';
 import 'package:coallider/core/extensions/build_context_extension.dart';
 import 'package:coallider/core/extensions/widget_extension.dart';
-import 'package:coallider/features/components/hooka_tap_animation_handler.dart';
+import 'package:coallider/features/components/app_tap_animation_handler.dart';
 
 class ConnectedDeviceCard extends StatelessWidget {
   final String deviceName;
@@ -20,7 +20,7 @@ class ConnectedDeviceCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final textTheme = context.textTheme;
     final colorScheme = context.colorScheme;
-    return HookaTapAnimationHandler(
+    return AppTapAnimationHandler(
       onTap: () {},
       child: Container(
         width: double.maxFinite,
@@ -38,13 +38,13 @@ class ConnectedDeviceCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  HookaTexts.connectedDevice,
+                  AppTexts.connectedDevice,
                   style: textTheme.headlineSmall,
                 ).paddingOnly(bottom: 10),
                 Row(
                   children: [
                     SvgPicture.asset(
-                      HookaImages.bluetooth,
+                      AppImages.bluetooth,
                       height: 24.0,
                     ).paddingOnly(right: 8),
                     Text(deviceName, style: textTheme.bodyLarge).expanded(),
@@ -54,13 +54,13 @@ class ConnectedDeviceCard extends StatelessWidget {
             ).expanded(),
             if (isHiglighted)
               SvgPicture.asset(
-                HookaImages.check,
+                AppImages.check,
                 height: 28,
                 width: 28,
                 color:
                     context.isLightTheme
-                        ? HookaColors.white
-                        : HookaColors.black,
+                        ? AppColors.white
+                        : AppColors.black,
               ),
           ],
         ),

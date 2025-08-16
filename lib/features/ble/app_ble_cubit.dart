@@ -8,21 +8,21 @@ import 'package:flutter_reactive_ble/flutter_reactive_ble.dart';
 import 'package:coallider/core/services/logger/logger_service.dart';
 import 'package:coallider/core/services/permission/permission_service.dart';
 import 'package:coallider/data/ble_exceptions.dart';
-import 'package:coallider/features/hooka_ble/hooka_ble_state.dart';
+import 'package:coallider/features/ble/app_ble_state.dart';
 
 const _servicesIds = <Uuid>[];
 
-final class HookaBleCubit extends Cubit<HookaBleState> {
+final class AppBleCubit extends Cubit<AppBleState> {
   StreamSubscription<DiscoveredDevice>? _scanSubscription;
   final FlutterReactiveBle _ble;
   final PermissionService _permissionService;
 
-  HookaBleCubit({
+  AppBleCubit({
     required final FlutterReactiveBle ble,
     required PermissionService permissionService,
   }) : _ble = ble,
        _permissionService = permissionService,
-       super(HookaBleState(devices: const []));
+       super(AppBleState(devices: const []));
 
   Future<void> findDevices() async {
     try {
@@ -161,7 +161,7 @@ final class HookaBleCubit extends Cubit<HookaBleState> {
         DeviceConnectionState.disconnected,
         DeviceConnectionState.disconnecting,
       ].contains(update.connectionState)) {
-        emit(HookaBleState(devices: state.devices));
+        emit(AppBleState(devices: state.devices));
         onConnectionCanceled();
       }
     });

@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 
-class HookaNavigator {
+class AppNavigator {
   final GlobalKey<NavigatorState> _navigatorKey;
-  HookaNavigator({required GlobalKey<NavigatorState> navigatorKey})
+  AppNavigator({required GlobalKey<NavigatorState> navigatorKey})
     : _navigatorKey = navigatorKey;
 
   Future<void> pushNamed(String routeName, {Object? args}) async {

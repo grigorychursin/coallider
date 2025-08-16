@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
-class HookaWebView extends StatefulWidget {
+class AppWebView extends StatefulWidget {
   final String path;
-  const HookaWebView({super.key, required this.path});
+  const AppWebView({super.key, required this.path});
 
   @override
-  State<HookaWebView> createState() => _HookaWebViewState();
+  State<AppWebView> createState() => _AppWebViewState();
 }
 
-class _HookaWebViewState extends State<HookaWebView> {
+class _AppWebViewState extends State<AppWebView> {
   bool isLoading = true;
   @override
   Widget build(BuildContext context) {
